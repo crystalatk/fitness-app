@@ -32,6 +32,7 @@ router.get('/', async (req, res, next) => {
             sums,
             label: JSON.stringify(label),
             date_labels: JSON.stringify(date_labels),
+            
         },
         partials: {
             body: "partials/profile",
