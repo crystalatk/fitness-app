@@ -145,8 +145,7 @@ router.get('/:type_id', async (req, res, next) => {
         },
         partials: {
             body: "partials/workouts_by_type",
-            header: "partials/header",
-            recents: "partials/recent_logged_workouts"
+            header: "partials/header"
         }
     });
 })

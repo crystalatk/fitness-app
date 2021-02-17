@@ -23,7 +23,7 @@ router.get('/', async (req, res, next) => {
         sums.unshift(Number(sum.total));
         d.setDate(d.getDate() - 1);
     }
-    res.render('template', {
+    res.render('profile_template', {
         locals: {
             title: `${userInfo.first_name} Profile`,
             is_logged_in: req.session.is_logged_in,
