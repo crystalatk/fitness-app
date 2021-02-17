@@ -35,7 +35,7 @@ const rootController = require('./routes/index');
 const workoutsController = require('./routes/workouts');
 const profileController = require('./routes/profile');
 const chartsController = require('./routes/charts');
-
+const logsController = require('./routes/logs');
 
 
 const secured = (req, res, next) => {
@@ -49,3 +49,4 @@ app.use('/', rootController);
 app.use('/workouts', secured, workoutsController);
 app.use('/profile', secured, profileController);
 app.use('/charts', secured, chartsController);
+app.use('/logs', secured, logsController);

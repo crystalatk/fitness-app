@@ -35,7 +35,8 @@ router.get('/', async (req, res, next) => {
         },
         partials: {
             body: "partials/profile",
-            header: "partials/header"
+            header: "partials/header",
+            recents: "partials/recent_logged_workouts"
         }
     });
 });
@@ -58,25 +59,6 @@ router.get('/profile_edit', async (req, res, next) => {
         }
     });
 });
-
-router.get('/loggedworkouts', async (req, res, next) => {
-    const user_id = req.session.user_id;
-    console.log("I am Here!");
-    const userInfo = await UserModel.getUserInfo(user_id);
-    const loggedWorkouts = await UserModel.getLoggedWorkouts(user_id);
-    res.render('template', {
-        locals: {
-            title: "Logged Workouts",
-            is_logged_in: req.session.is_logged_in,
-            userInfo,
-            loggedWorkouts,
-        },
-        partials: {
-            body: "partials/logged_workouts",
-            header: "partials/header"
-        }
-    });
-})
 
 // Posts
 router.post('/edit_profile', async (req, res) => {
